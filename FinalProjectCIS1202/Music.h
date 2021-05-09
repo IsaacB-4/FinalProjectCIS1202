@@ -4,6 +4,6 @@
 class Music :
     public Media
 {
-};
 
+};
 #endif

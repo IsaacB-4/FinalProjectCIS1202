@@ -20,10 +20,14 @@ int menu();
 //Main
 int main()
 {
-	int choice = 0;
+	//Class arrays to hold the collection
+	const int SIZE = 10;
+	Music albums[SIZE]{};
+	Movie films[SIZE]{};
 
 	//Main menu loop
-	while (choice != 5)
+	int choice = 0;
+	while (choice != 6)
 	{
 		choice = menu();
 
@@ -63,7 +67,7 @@ int menu()
 	//Input validation
 	if (choice < 1 || choice > 6)
 	{
-		cout << "\nPlease enter a number 1-5: ";
+		cout << "\nPlease enter a number 1-6: ";
 		cin >> choice;
 	}
 

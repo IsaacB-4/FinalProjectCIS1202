@@ -4,6 +4,6 @@
 class Movie :
     public Media
 {
-};
 
+};
 #endif
