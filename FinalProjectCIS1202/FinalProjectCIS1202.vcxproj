@@ -140,6 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FinalProjectCIS1202.cpp" />
+    <ClCompile Include="Media.cpp" />
+    <ClCompile Include="Movie.cpp" />
+    <ClCompile Include="Music.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Media.h" />
+    <ClInclude Include="Movie.h" />
+    <ClInclude Include="Music.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
