@@ -14,7 +14,58 @@ collection of music and films and display it in a variety of ways */
 #include <cmath>
 using namespace std;
 
+//Prototypes
+int menu();
+
+//Main
 int main()
 {
+	int choice = 0;
 
+	//Main menu loop
+	while (choice != 5)
+	{
+		choice = menu();
+
+		switch (choice)
+		{
+		case 1: 
+			break;
+		case 2: 
+			break;
+		case 3: 
+			break;
+		case 4: 
+			break;
+		case 5:
+			break;
+		}
+	}
+	return 0;
+}
+
+//Main menu
+int menu()
+{
+	int choice = 0;
+
+	//Prints the menu
+	cout << "1. Log music\n";
+	cout << "2. Log movie\n";
+	cout << "3. Display music library\n";
+	cout << "4. Display movie library\n";
+	cout << "5. Display collection info\n\n";
+
+	//Gets the user selection
+	cout << "Enter your selection: ";
+	cin >> choice;
+
+	//Input validation
+	if (choice < 1 || choice > 6)
+	{
+		cout << "\nPlease enter a number 1-5: ";
+		cin >> choice;
+	}
+
+	return choice;
 }
