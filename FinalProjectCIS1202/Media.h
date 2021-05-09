@@ -7,7 +7,7 @@ using namespace std;
 enum Format { OTHER, VYNIL, CD, DVD, BLURAY };
 class Media
 {
-private:
+protected:
 	string title;
 	Format type;
 	int date;

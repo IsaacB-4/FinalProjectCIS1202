@@ -4,6 +4,26 @@
 class Movie :
     public Media
 {
+protected:
+    string director;
+    int budget;
+    int runTime;
 
+public:
+    Movie() : Media()
+    {
+        director = "";
+        budget, runTime = 0;
+    }
+
+    //Accessors
+    string getDirector();
+    int getBudget();
+    int getRunTime();
+
+    //Mutators
+    void setDirector(string);
+    void setBudget(int);
+    void setRunTime(int);
 };
 #endif

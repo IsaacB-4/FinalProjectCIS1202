@@ -22,6 +22,7 @@ int main()
 {
 	//Class arrays to hold the collection
 	const int SIZE = 10;
+	int albumNum, filmNum = 0;
 	Music albums[SIZE]{};
 	Movie films[SIZE]{};
 
