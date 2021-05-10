@@ -9,7 +9,6 @@ collection of music and films and display it for you*/
 #include "Music.h"
 #include "Movie.h"
 #include <iostream>
-#include <fstream>
 #include <string>
 #include <cmath>
 using namespace std;
@@ -90,7 +89,20 @@ int main()
 			}
 			break;
 		case 5:
-
+			//Finds the average year of the albums and average budget and run time of the films
+			double avgDate = 0.0, avgBudget = 0.0, avgRunTime = 0.0;
+			for (int counter = 0; albumNum > counter; counter++)
+			{
+				avgDate += albums[counter].getYear();
+			}
+			cout << "The average release date of your records is " << round(avgDate / static_cast<double>(albumNum)) << "\n\n";
+			for (int counter = 0; filmNum > counter; counter++)
+			{
+				avgBudget += films[counter].getBudget();
+				avgRunTime += films[counter].getRunTime();
+			}
+			cout << "The average budget of your films is $" << round(avgBudget / static_cast<double>(filmNum)) << "\n\n";
+			cout << "The average run-time of your films is " << round(avgRunTime / static_cast<double>(filmNum)) << "min\n\n";
 			break;
 		}
 	}
@@ -107,7 +119,7 @@ int menu()
 	cout << "2. Log a movie\n";
 	cout << "3. Display music library\n";
 	cout << "4. Display movie library\n";
-	cout << "5. Display collection info\n";
+	cout << "5. Display collection averages\n";
 	cout << "6. Exit the program\n\n";
 
 	//Gets the user selection
