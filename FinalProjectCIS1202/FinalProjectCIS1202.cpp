@@ -16,6 +16,7 @@ using namespace std;
 
 //Prototypes
 int menu();
+string mediaFormat(Format);
 
 //Main
 int main()
@@ -41,7 +42,7 @@ int main()
 		case 1: 
 			//User input for the Music class
 			cout << "Enter the title: "; cin >> ws; getline(cin, tempS); albums[albumNum].set(tempS);
-			cout << " 0 - Other | 1 - Vynil | 2 - CD | 3 - DVD | 4 - Blu-rau\nEnter the format: "; 
+			cout << " 0 - Other | 1 - Vinyl | 2 - CD | 3 - DVD | 4 - Blu-rau\nEnter the format: "; 
 			cin >> tempI; if (tempI < 0 || tempI > 4) { cout << "Please entere a value 0-4: "; cin >> tempI; }
 			albums[albumNum].set(static_cast<Format>(tempI));
 			cout << "Enter the release date: "; cin >> tempI; albums[albumNum].set(tempI);
@@ -53,7 +54,7 @@ int main()
 		case 2: 
 			//User input for the Movie class
 			cout << "Enter the title: "; cin >> ws; getline(cin, tempS); films[filmNum].set(tempS);
-			cout << " 0 - Other | 1 - Vynil | 2 - CD | 3 - DVD | 4 - Blu-rau\nEnter the format: ";
+			cout << " 0 - Other | 1 - Vinyl | 2 - CD | 3 - DVD | 4 - Blu-rau\nEnter the format: ";
 			cin >> tempI; if (tempI < 0 || tempI > 4) { cout << "Please entere a value 0-4: "; cin >> tempI; }
 			films[filmNum].set(static_cast<Format>(tempI));
 			cout << "Enter the release date: "; cin >> tempI; films[filmNum].set(tempI);
@@ -64,10 +65,32 @@ int main()
 			filmNum++; cout << endl;
 			break;
 		case 3: 
+			//Loops through the Music classes and diplays thier data
+			for (int counter = 0; albumNum > counter; counter++)
+			{
+				cout << "Album #" << (counter + 1) << "\n\n";
+				cout << "Album title: " << albums[counter].getTitle() << endl;
+				cout << "Format: " << mediaFormat(albums[counter].getType()) << endl;
+				cout << "Release date: " << albums[counter].getYear() << endl;
+				cout << "Artist/Group: " << albums[counter].getArtist() << endl;
+				cout << "Label: " << albums[counter].getLabel() << endl << endl;
+			}
 			break;
 		case 4: 
+			//Loops through the Movie classes and diplays thier data
+			for (int counter = 0; filmNum > counter; counter++)
+			{
+				cout << "Film #" << (counter + 1) << "\n\n";
+				cout << "Film title: " << films[counter].getTitle() << endl;
+				cout << "Format: " << mediaFormat(films[counter].getType()) << endl;
+				cout << "Release date: " << films[counter].getYear() << endl;
+				cout << "Director: " << films[counter].getDirector() << endl;
+				cout << "Budget: $" << films[counter].getBudget() << endl;
+				cout << "Run-time: " << films[counter].getRunTime() << "min\n\n";
+			}
 			break;
 		case 5:
+
 			break;
 		}
 	}
@@ -99,4 +122,24 @@ int menu()
 	}
 	cout << endl;
 	return choice;
+}
+
+//Translates the enum to a string
+string mediaFormat(Format type)
+{
+	string holder;
+	switch (type)
+	{
+	case 0: holder = "Other";
+		break;
+	case 1: holder = "Vinyl";
+		break;
+	case 2: holder = "CD";
+		break;
+	case 3: holder = "DVD";
+		break;
+	case 4: holder = "Blu-ray";
+		break;
+	}
+	return holder;
 }

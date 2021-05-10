@@ -25,5 +25,5 @@ void Movie::setBudget(int holder)
 }
 void Movie::setRunTime(int holder)
 {
-	holder = runTime;
+	runTime = holder;
 }

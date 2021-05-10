@@ -4,7 +4,7 @@
 using namespace std;
 
 //Enumeration
-enum Format { OTHER, VYNIL, CD, DVD, BLURAY };
+enum Format { OTHER, VINYL, CD, DVD, BLURAY };
 class Media
 {
 protected:
