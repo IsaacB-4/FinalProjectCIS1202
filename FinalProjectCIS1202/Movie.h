@@ -13,7 +13,7 @@ public:
     Movie() : Media()
     {
         director = "";
-        budget, runTime = 0;
+        budget = 0, runTime = 0;
     }
 
     //Accessors
